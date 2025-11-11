@@ -17,7 +17,8 @@ async def root():
 
 @app.post("/upload_graph_json/")
 async def create_upload_file(file: UploadFile):
-    #TODO: implement this function
+    if not file.filename.endswith('.json'):
+        return {"Upload Error": "Invalid file type. Please upload a .json file."}
     raise NotImplementedError("/upload_graph_json not yet implemented.")
 
 
